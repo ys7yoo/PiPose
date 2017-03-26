@@ -1,4 +1,4 @@
-Structured Feature Learning for Pose Estimation
+Pose Estimation
 ============================
 
 This code is based on [Chu et al. 2016](https://arxiv.org/abs/1603.09065) and [Chen & Yuille, 2014](
