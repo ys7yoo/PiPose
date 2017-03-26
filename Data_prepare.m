@@ -11,6 +11,7 @@ pa = conf.pa;
 
 % -------------------- collect data -----------------------
 disp('collect data..........')
+mkdir(cachedir)
 [pos_train, pos_val,neg_train, ~] = LSP_data_fconv(cachedir);
 
 % -------------------- clustering -----------------------
@@ -19,6 +20,7 @@ disp('clustering..........')
 
 % ------------------ generate data and label ------------------------
 disp('generate data and label..........')
+mkdir(lmdb_dir)
 pos_train = fconv_data_lsp(name,pos_train,pos_val,neg_train,lmdb_dir,cachedir,1);
 pos_val = fconv_data_lsp(name,pos_train,pos_val,neg_train,lmdb_dir,cachedir,2);
 

@@ -111,6 +111,7 @@ catch
     
     neg_train = add_flip(neg_train, []);
     neg_val = add_flip(neg_val, []);
+    
     save([cachedir cls],'pos_train','pos_val','neg_train','neg_val');
 end
 
