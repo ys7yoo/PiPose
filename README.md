@@ -1,7 +1,8 @@
 Structured Feature Learning for Pose Estimation
 ============================
 
-This is the code for our work [Structured Feature Learning for Pose estimation](https://arxiv.org/abs/1603.09065)
+This code is based on [Chu et al. 2016](https://arxiv.org/abs/1603.09065) and [Chen & Yuille, 2014](
+http://www.stat.ucla.edu/~xianjie.chen/projects/pose_estimation/pose_estimation.html)
 
 
 ## Get LSP dataset
@@ -36,5 +37,5 @@ author={Chu, Xiao and Ouyang, Wanli and Li,Hongsheng and Wang, Xiaogang},
 booktitle={CVPR}, year={2016} 
 }
 ```
-Our project is written based on [Xianjie Chen's NIPS2014](http://www.stat.ucla.edu/~xianjie.chen/projects/pose_estimation/pose_estimation.htm)
+
 
