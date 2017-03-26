@@ -5,8 +5,10 @@ This is the code for our work [Structured Feature Learning for Pose estimation](
 
 
 ## Get LSP dataset
+```bash
 wget http://www.comp.leeds.ac.uk/mat4saj/lsp_dataset.zip
 unzip lsp_dataset.zip
+```
 
 ## Training
 **Make caffe**: We write our own layer for loss, channel dropout and mix interpolation, if you are not going to use these functions, you can use your own caffe.
