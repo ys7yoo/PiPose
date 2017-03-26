@@ -10,7 +10,9 @@ This is the code for our work [Structured Feature Learning for Pose estimation](
 make matcaffe
 ```
 **Get LMDB**: Run "Data_prepare.m" in matlab to generate LMDB requires
-**Train the caffe model**: Run "Baseline.sh. You may need the pre-train fully convolutional [VGG-16](https://www.dropbox.com/s/he3qdxk6pspjct8/VGG_ILSVRC_16_layers_full_conv.caffemodel?dl=0) model.
+
+**Train the caffe model**: Run "Baseline.sh. 
+You may need the pre-train fully convolutional [VGG-16](https://www.dropbox.com/s/he3qdxk6pspjct8/VGG_ILSVRC_16_layers_full_conv.caffemodel?dl=0) model.
 ```bash
 ./Baseline.sh
 ```
