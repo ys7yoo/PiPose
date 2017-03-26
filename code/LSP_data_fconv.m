@@ -85,10 +85,14 @@ catch
     
     % -------------------
     % grab neagtive image information
-    negims = './dataset/INRIA/%05d.jpg';
-    if ~exist('./dataset/INRIA', 'dir')
-        error('Please downlad INRIA dataset');
-    end
+    negims = './neg_dataset/%05d.jpg';
+    if ~exist('./neg_dataset', 'dir')
+        error('Please prepare negative images in ./neg_dataset');
+    end    
+    %negims = './dataset/INRIA/%05d.jpg';
+    %if ~exist('./dataset/INRIA', 'dir')
+    %    error('Please downlad INRIA dataset');
+    %end
     num = numel(trainval_frs_neg);
     neg = struct('im', cell(num, 1), 'joints', cell(num, 1), ...
         'r_degree', cell(num, 1), 'isflip', cell(num,1));
