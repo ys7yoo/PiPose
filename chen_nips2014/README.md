@@ -27,6 +27,7 @@ Acknowledgements: We graciously thank the authors of the previous code releases 
 ```
 wget https://github.com/xianjiec/caffe/archive/dev.zip
 unzip dev.zip
+ln -s caffe-dev caffe
 ```
 2. Make sure to compile the Caffe MATLAB wrapper, which is not built by default: make matcaffe
 3. Start matlab, run 'startup' script.
