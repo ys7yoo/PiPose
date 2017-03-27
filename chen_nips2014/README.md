@@ -24,6 +24,10 @@ Acknowledgements: We graciously thank the authors of the previous code releases 
 ### Installing and Running
 
 1. Install [Caffe](https://github.com/xianjiec/caffe/tree/dev) with the customized matlab wrapper under external/caffe. A symbolic link will work.
+```
+wget https://github.com/xianjiec/caffe/archive/dev.zip
+unzip dev.zip
+```
 2. Make sure to compile the Caffe MATLAB wrapper, which is not built by default: make matcaffe
 3. Start matlab, run 'startup' script.
 4. Run the 'compile' script to compile the mex functions.
