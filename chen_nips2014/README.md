@@ -33,5 +33,6 @@ ln -s caffe-dev caffe
 3. Start matlab, run 'startup' script.
 4. Run the 'compile' script to compile the mex functions.
    (the script is tested under ubuntu 12.04, you may need to edit it depending on your system)
+   For OSX, use 'compile.sh' instead.
 5. Run 'demo_lsp' to doing training and inference on the LSP dataset with benchmark evaluation.
 
