@@ -11,6 +11,6 @@
 
 ##
 CAFFE_ROOT="./external/caffe"
-/opt/matlab/bin/mex -v -O -outdir bin  -I$CAFFE_ROOT/build/src -I$CAFFE_ROOT$/.build_release/src -I/opt/local/include -lprotobuf -llmdb -L/opt/local/lib  $CAFFE_ROOT/build/lib/libcaffe.a src/mex/store_patch.cpp 
+/opt/matlab/bin/mex -O -outdir bin  -I$CAFFE_ROOT/build/src -I/opt/local/include -lprotobuf -llmdb -L/opt/local/lib  $CAFFE_ROOT/build/lib/libcaffe.a src/mex/store_patch.cpp 
 #
 
