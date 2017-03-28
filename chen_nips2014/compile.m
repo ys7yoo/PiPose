@@ -1,6 +1,6 @@
 function compile()
 conf = global_conf();
-caffe_root = conf.caffe_root;
+caffe_root = conf.caffe_root
 if ~exist(caffe_root, 'dir')
   error('Please install Caffe in %s', caffe_root);
 end
