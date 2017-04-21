@@ -30,6 +30,7 @@ unzip dev.zip
 ln -s caffe-dev caffe
 ```
 (Do not replace Makefile)
+
 2. Make sure to compile the Caffe MATLAB wrapper, which is not built by default: 
 ```
 make matcaffe
