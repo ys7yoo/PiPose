@@ -90,7 +90,11 @@ catch
   % grab neagtive image information
   negims = './dataset/INRIA/%05d.jpg';
   if ~exist('./dataset/INRIA', 'dir')
-    error('Please downlad INRIA dataset');
+    error('Please downlad INRIA dataset from http://pascal.inrialpes.fr/data/human/');
+    % do the following to fix this error
+    % cd dataset
+    % wget ftp://ftp.inrialpes.fr/pub/lear/douze/data/INRIAPerson.tar
+    % tar xvf ../INRIAPerson.tar
   end
   num = numel(trainval_frs_neg);
   neg = struct('im', cell(num, 1), 'joints', cell(num, 1), ...
