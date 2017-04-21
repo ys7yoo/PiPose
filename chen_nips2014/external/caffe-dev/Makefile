@@ -223,6 +223,9 @@ endif
 PYTHON_LIBRARIES ?= boost_python python2.7
 WARNINGS := -Wall -Wno-sign-compare
 
+# [QUICK FIX] added for conversion issue (2017. 4.21)
+WARNINGS += -Wno-c++11-narrowing
+
 ##############################
 # Set build directories
 ##############################
