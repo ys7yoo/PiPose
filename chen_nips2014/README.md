@@ -29,7 +29,7 @@ wget https://github.com/xianjiec/caffe/archive/dev.zip
 unzip dev.zip
 ln -s caffe-dev caffe
 ```
-2. Make sure to compile the Caffe MATLAB wrapper, which is not built by default: make matcaffe
+2. Make sure to compile the Caffe MATLAB wrapper, which is not built by default: run "make matcaffe"
 3. Start matlab, run 'startup' script.
 4. Run the 'compile' script to compile the mex functions.
    (the script is tested under ubuntu 12.04, you may need to edit it depending on your system)
