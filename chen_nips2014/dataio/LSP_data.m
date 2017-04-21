@@ -18,11 +18,16 @@ catch
   joint_order = [14,13,9,8,7,3,2,1,10,11,12,4,5,6];
   % -------------------
   % grab positive annotation and image information
-  lsp_imgs = './dataset/LSP/images/im%04d.jpg';
-  if ~exist('./dataset/LSP', 'dir')
-    error('Please downlad LSP dataset');
+  lsp_imgs = './dataset/lsp_dataset/images/im%04d.jpg';
+  if ~exist('./dataset/lsp_dataset', 'dir')
+    error('Please downlad LSP dataset from http://www.comp.leeds.ac.uk/mat4saj/lsp.html');
+    % Do the following for preparing data 
+    % mkdir dataset
+    % cd dataset
+    % wget http://www.comp.leeds.ac.uk/mat4saj/lsp_dataset.zip
+    % unzip lsp_dataset
   end
-  lsp_joints = parload('./dataset/LSP/joints.mat', 'joints');  % observer-centric annotation
+  lsp_joints = parload('./dataset/lsp_dataset/joints.mat', 'joints');  % observer-centric annotation
   % convert to person-centric
   lsp_joints = lsp_pc2oc(lsp_joints);
   % ---------- original images --------
