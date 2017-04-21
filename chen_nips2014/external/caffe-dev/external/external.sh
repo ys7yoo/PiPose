@@ -16,4 +16,4 @@ cd glog-0.3.4
 # ./configure --enable-shared=no --enable-static=yes --prefix=/Users/yyoo/src/caffe-rc3/external/glog-install
 ./configure --enable-shared=no --enable-static=yes --prefix=$CURRENT/glog-install
 
-make install
+make -j 12 install
