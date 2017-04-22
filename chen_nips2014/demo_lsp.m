@@ -10,7 +10,7 @@ note = [conf.note];
 diary([cachedir note '_log_' datestr(now,'mm-dd-yy') '.txt']);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% read data 
+%% read data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [pos_train, pos_val, pos_test, neg_train, neg_val, tsize] = LSP_data();
 
@@ -45,8 +45,8 @@ fprintf('============= On test =============\n');
 ests = conf.box2det(boxes, p_no);
 % generate part stick from joints locations
 for ii = 1:numel(ests)
-  ests(ii).sticks = conf.joint2stick(ests(ii).joints);
-  pos_test(ii).sticks = conf.joint2stick(pos_test(ii).joints);
+    ests(ii).sticks = conf.joint2stick(ests(ii).joints);
+    pos_test(ii).sticks = conf.joint2stick(pos_test(ii).joints);
 end
 show_eval(pos_test, ests, conf, eval_method);
 diary off;

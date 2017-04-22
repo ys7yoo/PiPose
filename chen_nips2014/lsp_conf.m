@@ -39,7 +39,7 @@ conf.reference_joints_pair = [6, 9];     % right shoulder and left hip (from obs
 % symmetry_joint_id(i) = j, if joint j is the symmetry joint of i (e.g., the left
 % shoulder is the symmetry joint of the right shoulder).
 conf.symmetry_joint_id = [2,1,9,10,11,12,13,14,3,4,5,6,7,8];
-conf.show_joint_ids = find(conf.symmetry_joint_id >= 1:numel(conf.symmetry_joint_id)); 
+conf.show_joint_ids = find(conf.symmetry_joint_id >= 1:numel(conf.symmetry_joint_id));
 conf.joint_name = {'Head', 'Shou', 'Elbo', 'Wris', 'Hip', 'Knee', 'Ankle'};
 
 conf.box2det = @lsp_box2det;
