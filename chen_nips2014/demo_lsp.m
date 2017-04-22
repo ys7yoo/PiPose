@@ -18,7 +18,7 @@ diary([cachedir note '_log_' datestr(now,'mm-dd-yy') '.txt']);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% train dcnn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-USE_GPU=0
+USE_GPU = 0
 if USE_GPU
     caffe_solver_file = 'external/my_models/lsp/lsp_solver.prototxt';
 else
