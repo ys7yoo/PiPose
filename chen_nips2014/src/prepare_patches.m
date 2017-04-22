@@ -34,3 +34,11 @@ if ~exist([cachedir, 'LMDB_train'], 'dir') || ~exist([cachedir, 'LMDB_val'], 'di
         store_patch(val_imdata, val_labels, psize, [cachedir, 'LMDB_val']);
     end
 end
+
+%% for LSP dataset 
+% prepared paches are stored in cache/lsp/LMDB_train
+% -> re-use from quantum:~/src/PiPose/chen_nips2014/cache/LMDB_train.tar.gz
+%   data.mdb: 8.6 GB
+%   lock.mdb: 8 KB
+
+
