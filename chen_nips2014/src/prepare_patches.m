@@ -1,4 +1,16 @@
 function prepare_patches(pos_train, pos_val, neg_train, tsize)
+
+
+%% prepare local image paches and save it to the cache folder
+
+%% for LSP dataset 
+% prepared paches are stored in cache/lsp/LMDB_train
+% -> re-use from quantum:~/src/PiPose/chen_nips2014/cache/LMDB_train.tar.gz
+%   data.mdb: 8.6 GB
+%   lock.mdb: 8 KB
+
+
+%%
 conf = global_conf();
 cachedir = conf.cachedir;
 
@@ -35,10 +47,6 @@ if ~exist([cachedir, 'LMDB_train'], 'dir') || ~exist([cachedir, 'LMDB_val'], 'di
     end
 end
 
-%% for LSP dataset 
-% prepared paches are stored in cache/lsp/LMDB_train
-% -> re-use from quantum:~/src/PiPose/chen_nips2014/cache/LMDB_train.tar.gz
-%   data.mdb: 8.6 GB
-%   lock.mdb: 8 KB
+
 
 
