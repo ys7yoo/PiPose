@@ -33,8 +33,7 @@ if ~exist(model_file, 'file')
   %       conf.device_id, caffe_solver_file)]);
     %% QUICK FIX for CPU ONLY MODE
     fprintf('Training model using CPU only');
-    system([caffe_root, '/build/tools/caffe train ', sprintf('-solver %s', ...
-           conf.device_id, caffe_solver_file)]);    
+    system([caffe_root, '/build/tools/caffe train ', sprintf('-solver %s', caffe_solver_file)]);    
 end
 
 % -------------------------------------------------------------------------
