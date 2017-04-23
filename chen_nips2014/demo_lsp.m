@@ -12,6 +12,7 @@ diary([cachedir note '_log_' datestr(now,'mm-dd-yy') '.txt']);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% read data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+disp('read LSP data')
 tic
 [pos_train, pos_val, pos_test, neg_train, neg_val, tsize] = LSP_data();
 toc

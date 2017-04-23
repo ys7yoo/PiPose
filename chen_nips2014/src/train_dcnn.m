@@ -17,8 +17,8 @@ cnn = conf.cnn;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% prepare training patches
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-tic
 disp('preparing training patches')
+tic
 prepare_patches(pos_train, pos_val, neg_train, tsize);
 toc
 clear mex;
@@ -43,8 +43,8 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% train dcnn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-tic
 disp('training Deep CNN')
+tic
 
 caffe_root = conf.caffe_root;
 model_file = cnn.cnn_model_file;
@@ -63,8 +63,8 @@ toc
 %% dcnn net surgery
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % get fully-convolutional net
-tic
 disp('performing surgery')
+tic
 
 deploy_file = cnn.cnn_deploy_file;
 fully_conv_model_file = cnn.cnn_conv_model_file;
