@@ -25,7 +25,7 @@ catch
         % wget http://www.comp.leeds.ac.uk/mat4saj/lsp_dataset.zip
         % unzip lsp_dataset
     end
-    lsp_joints = parload('./dataset/lsp_dataset/joints.mat', 'joints');  % observer-centric annotation
+    lsp_joints = parload('../dataset/lsp_dataset/joints.mat', 'joints');  % observer-centric annotation
     % convert to person-centric
     lsp_joints = lsp_pc2oc(lsp_joints);
     %% ---------- original images --------
