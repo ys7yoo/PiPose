@@ -7,9 +7,9 @@ cachedir = conf.cachedir;
 cluster_name = sprintf('clusters_K%d.mat', conf.K);
 
 try
-  load([cachedir cluster_name]);
+    load([cachedir cluster_name]);
 catch
-  % cluster relative positions
-  clusters = cluster_rp(cat(1, pos_train, pos_val), tsize);
-  save([cachedir cluster_name], 'clusters');
+    % cluster relative positions
+    clusters = cluster_rp(cat(1, pos_train, pos_val), tsize);
+    save([cachedir cluster_name], 'clusters');
 end
