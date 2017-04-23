@@ -11,10 +11,10 @@ rng(5);
 try
     load([cachedir cls]);
 catch
-    trainval_frs_pos = 1:1000;      % training frames for positive
-    test_frs_pos = 1001:2000;   % testing frames for positive
+    idx_trainval_frs_pos = 1:1000;      % training frames for positive
+    idx_test_frs_pos = 1001:2000;       % testing frames for positive
     
-    trainval_frs_neg = 615:1832;    % training frames for negative
+    trainval_frs_neg = 615:1832;        % training frames for negative
     joint_order = [14,13,9,8,7,3,2,1,10,11,12,4,5,6];
     % -------------------
     %% grab positive annotation and image information
@@ -26,13 +26,13 @@ catch
         % unzip lsp_dataset
     end
     lsp_joints = parload('../dataset/lsp_dataset/joints.mat', 'joints');  % observer-centric annotation
-    % convert to person-centric
-    lsp_joints = lsp_pc2oc(lsp_joints);
+    % size(lsp_joints) = 3 x 14x 2000  (location&visibility x 14 joints x 2000 images)       
+    lsp_joints = lsp_pc2oc(lsp_joints); % convert to person-centric
     %% ---------- original images --------
-    frs_pos = cat(2, trainval_frs_pos, test_frs_pos);
+    frs_pos = cat(2, idx_trainval_frs_pos, idx_test_frs_pos);
     num = numel(frs_pos);
     all_pos = struct('im', cell(num, 1), 'joints', cell(num, 1), ...
-        'r_degree', cell(num, 1), 'isflip', cell(num,1));
+                     'r_degree', cell(num, 1), 'isflip', cell(num,1));
     for ii = 1:numel(frs_pos)
         fr = frs_pos(ii);
         all_pos(ii).im = sprintf(lsp_imgs,fr);
@@ -40,6 +40,12 @@ catch
         all_pos(ii).r_degree = 0;
         all_pos(ii).isflip = 0;
     end
+%   an item looks like  
+%      im: '../dataset/lsp_dataset/images/im0003.jpg'
+%      joints: [14×2 double]
+%      r_degree: 0
+%      isflip: 0
+      
     % -------------------
     %% create ground truth joints for model training
     % We augment the original 14 joint positions with midpoints of joints,
@@ -64,25 +70,30 @@ catch
         otherwise
             error('p_no = %d is not supported!!', p_no);
     end
-    pos_trainval = all_pos(1 : numel(trainval_frs_pos));
-    pos_test = all_pos(numel(trainval_frs_pos)+1 : end);
+    pos_trainval = all_pos(1 : numel(idx_trainval_frs_pos));
+    pos_test = all_pos(numel(idx_trainval_frs_pos)+1 : end);
     
     for ii = 1:numel(pos_trainval)
         pos_trainval(ii).joints = Trans * pos_trainval(ii).joints; % linear combination
     end
     
     %% --------- flip trainval images --------
+    disp('flip trainval images')
     pos_trainval = add_flip(pos_trainval, mirror);
     % ------- init dataset specific parameters --------
     [pos_trainval, tsize] = init_scale(pos_trainval, pa, conf.step);
     %% --------- rotate trainval images ---------
+    disp('rotate trainval images')
     degree = conf.degree;
     assert(numel(unique(degree)) == numel(degree));
     pos_trainval = add_rotate(pos_trainval, degree);
-    %% -------- split train, val -----------------
+    
+    %% -------- split trainval images -----------------
+    disp('split trainval images')
     val_id = randperm(numel(pos_trainval), 2000);
     train_id = true(numel(pos_trainval), 1); train_id(val_id) = false;
     pos_train = pos_trainval(train_id); pos_val = pos_trainval(val_id);
+    
     
     % -------------------
     %% grab neagtive image information
