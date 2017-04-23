@@ -19,8 +19,8 @@ catch
   Trans_all = full(sparse(I,J,A,10,9));
   % -------------------
   % grab positive annotation and image information
-  flic_imgs = './dataset/FLIC/images/%s';
-  if ~exist('./dataset/FLIC', 'dir')
+  flic_imgs = '../dataset/FLIC/images/%s';
+  if ~exist('../dataset/FLIC', 'dir')
     error('Please downlad FLIC dataset from http://vision.grasp.upenn.edu/cgi-bin/index.php?n=VideoLearning.FLIC');
   end
   flic_anno = parload('./dataset/FLIC/examples.mat', 'examples'); 
@@ -102,8 +102,8 @@ catch
   pos_train = pos_trainval(train_id); pos_val = pos_trainval(val_id);
   
   % ------ neagtive images -----------
-  negims = './dataset/INRIA/%05d.jpg';
-  if ~exist('./dataset/INRIA', 'dir')
+  negims = '../dataset/INRIA/%05d.jpg';
+  if ~exist('../dataset/INRIA', 'dir')
     error('Please downlad INRIA dataset');
   end
   num = numel(trainval_frs_neg);

@@ -18,12 +18,10 @@ catch
     joint_order = [14,13,9,8,7,3,2,1,10,11,12,4,5,6];
     % -------------------
     %% grab positive annotation and image information
-    lsp_imgs = './dataset/lsp_dataset/images/im%04d.jpg';
-    if ~exist('./dataset/lsp_dataset', 'dir')
+    lsp_imgs = '../dataset/lsp_dataset/images/im%04d.jpg';
+    if ~exist('../dataset/lsp_dataset', 'dir')
         error('Please downlad LSP dataset from http://www.comp.leeds.ac.uk/mat4saj/lsp.html');
-        % Do the following for preparing data
-        % mkdir dataset
-        % cd dataset
+        % Do the following in ../dataset/
         % wget http://www.comp.leeds.ac.uk/mat4saj/lsp_dataset.zip
         % unzip lsp_dataset
     end
@@ -88,13 +86,12 @@ catch
     
     % -------------------
     %% grab neagtive image information
-    negims = './dataset/INRIA/%05d.jpg';
-    if ~exist('./dataset/INRIA', 'dir')
+    negims = '../dataset/INRIA/%05d.jpg';
+    if ~exist('../dataset/INRIA', 'dir')
         error('Please downlad INRIA dataset from http://pascal.inrialpes.fr/data/human/');
-        % do the following to fix this error
-        % cd dataset
+        % do the following in ../dataset
         % wget ftp://ftp.inrialpes.fr/pub/lear/douze/data/INRIAPerson.tar
-        % tar xvf ../INRIAPerson.tar
+        % tar xvf INRIAPerson.tar
     end
     num = numel(trainval_frs_neg);
     neg = struct('im', cell(num, 1), 'joints', cell(num, 1), ...
