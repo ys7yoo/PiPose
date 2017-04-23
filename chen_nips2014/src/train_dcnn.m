@@ -17,7 +17,10 @@ cnn = conf.cnn;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% prepare training patches
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+tic
+disp('preparing training patches')
 prepare_patches(pos_train, pos_val, neg_train, tsize);
+toc
 clear mex;
 
 
@@ -40,6 +43,9 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% train dcnn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+tic
+disp('training Deep CNN')
+
 caffe_root = conf.caffe_root;
 model_file = cnn.cnn_model_file;
 if ~exist(model_file, 'file')
@@ -51,11 +57,15 @@ if ~exist(model_file, 'file')
     system([caffe_root, '/build/tools/caffe train ', sprintf('-solver %s', caffe_solver_file)]);
 end
 
+toc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% dcnn net surgery
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % get fully-convolutional net
+tic
+disp('performing surgery')
+
 deploy_file = cnn.cnn_deploy_file;
 fully_conv_model_file = cnn.cnn_conv_model_file;
 deploy_conv_file = cnn.cnn_deploy_conv_file;
@@ -63,3 +73,6 @@ if ~exist(fully_conv_model_file, 'file')
     net_surgery(model_file, deploy_file, fully_conv_model_file, deploy_conv_file);
     fprintf('fully convolutional model saved as %s\n', fully_conv_model_file);
 end
+
+toc
+
