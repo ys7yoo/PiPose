@@ -4,7 +4,7 @@ function prepare_patches(pos_train, pos_val, neg_train, tsize)
 %% prepare local image paches and save it to the cache folder
 % use the following sub routines
 %  - learn_clusters.m 
-%  - store_patch.mex
+%  - store_patch.mex (src/mex/store_patch.cpp)
 
 %% for LSP dataset 
 % prepared paches are stored in cache/lsp/LMDB_train
