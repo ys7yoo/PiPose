@@ -1,4 +1,8 @@
 function [pos_train, pos_val, pos_test, neg_train, neg_val, tsize] = LSP_data()
+
+% prepare images and annotations 
+% save to cache/lsp26_data.mat
+
 conf = global_conf();
 pa = conf.pa;
 p_no = numel(pa);

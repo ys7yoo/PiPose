@@ -45,7 +45,7 @@ if ~exist([cachedir, 'LMDB_train'], 'dir') || ~exist([cachedir, 'LMDB_val'], 'di
     %% validation data
     val_imdata = num2cell(pos_val);
     val_labels = num2cell(label_val);
-    psize = tsize * conf.step;
+    %psize = tsize * conf.step;
     if ~exist([cachedir, 'LMDB_val'], 'dir')
         store_patch(val_imdata, val_labels, psize, [cachedir, 'LMDB_val']);
     end
