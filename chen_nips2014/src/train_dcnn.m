@@ -1,4 +1,15 @@
 function train_dcnn(pos_train, pos_val, neg_train, tsize, caffe_solver_file)
+
+% train deep CNN 
+% uses the following sub routines
+%  - prepare_patches.m
+%  - external/caffe/build/tools/caffe % for train
+%  - net_surgery.m
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% get configurations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 conf = global_conf();
 cachedir = conf.cachedir;
 cnn = conf.cnn;
