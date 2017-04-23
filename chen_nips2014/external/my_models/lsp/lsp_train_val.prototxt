@@ -6,7 +6,7 @@ layers {
   top: "data"
   top: "label"
   data_param {
-    source: "cache/lsp/LMDB_train"
+    source: "../cache/lsp/LMDB_train"
     backend: LMDB
     batch_size: 512
   }
@@ -25,7 +25,7 @@ layers {
   top: "data"
   top: "label"
   data_param {
-    source: "cache/lsp/LMDB_val"
+    source: "../cache/lsp/LMDB_val"
     backend: LMDB
     batch_size: 260
   }
