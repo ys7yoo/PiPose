@@ -7,6 +7,9 @@ cachedir = conf.cachedir;
 pa = conf.pa;
 p_no = length(pa);
 note = [conf.note];
+
+conf.useGpu = 0;        % DO NOT USE GPU
+ 
 diary([cachedir note '_log_' datestr(now,'mm-dd-yy') '.txt']);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,8 +23,7 @@ toc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% train dcnn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-USE_GPU = 0
-if USE_GPU
+if conf.useGpu
     caffe_solver_file = 'external/my_models/lsp/lsp_solver.prototxt';
 else
     caffe_solver_file = 'external/my_models/lsp/lsp_solver_cpu.prototxt';
