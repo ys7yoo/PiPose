@@ -28,9 +28,10 @@ if conf.useGpu
 else
     caffe_solver_file = 'external/my_models/lsp/lsp_solver_cpu.prototxt';
 end
-tic
+%tic
 train_dcnn(pos_train, pos_val, neg_train, tsize, caffe_solver_file);
-toc
+%disp('end of train_dcnn')
+%toc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% train graphical model
