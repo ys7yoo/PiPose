@@ -14,7 +14,8 @@ conf.mining_pos = false;
 conf.K = 13;
 conf.test_with_detection = false;
 
-conf.useGpu = 1;
+% conf.useGpu = 1;
+conf.useGpu = 0;
 conf.batch_size = 1024;
 
 conf.at_least_one = true;
