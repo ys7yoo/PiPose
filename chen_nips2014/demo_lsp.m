@@ -8,7 +8,7 @@ pa = conf.pa;
 p_no = length(pa);
 note = [conf.note];
 
-conf.useGpu = 0;        % DO NOT USE GPU
+% conf.useGpu = 0;        % DO NOT USE GPU => moved to global_conf() 
  
 diary([cachedir note '_log_' datestr(now,'mm-dd-yy') '.txt']);
 
