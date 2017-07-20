@@ -62,4 +62,7 @@ for ii = 1:numel(ests)
 end
 show_eval(pos_test, ests, conf, eval_method);
 diary off;
+
+xlabel('range');ylabel('percentage of detected joints');set(gcf,'paperposition', [0 0 6 5]);set(gcf,'papersize', [6 5]);saveas(gcf, 'lsp_pdf.pdf')
+
 clear mex;
