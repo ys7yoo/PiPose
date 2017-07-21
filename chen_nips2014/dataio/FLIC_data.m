@@ -22,6 +22,10 @@ catch
   flic_imgs = '../dataset/FLIC/images/%s';
   if ~exist('../dataset/FLIC', 'dir')
     error('Please downlad FLIC dataset from http://vision.grasp.upenn.edu/cgi-bin/index.php?n=VideoLearning.FLIC');
+    % FLIC
+    % wget https://doc-0s-b4-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/k897phf6aj3av3p22rnu5e3rfuloa5gf/1500602400000/02359112771043935486/*/0B4K3PZp8xXDJN0Fpb0piVjQ3Y3M?e=download
+    % FLIC-full
+    % wget https://doc-0k-b4-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/5vb2heva1d2i2kdhicffemoqnklskljd/1500602400000/02359112771043935486/*/0B4K3PZp8xXDJd2VwblhhOVBfMDg?e=download
   end
   flic_anno = parload('./dataset/FLIC/examples.mat', 'examples'); 
   % use official observer-centric annotations

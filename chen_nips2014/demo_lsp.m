@@ -33,6 +33,13 @@ train_dcnn(pos_train, pos_val, neg_train, tsize, caffe_solver_file);
 %disp('end of train_dcnn')
 %toc
 
+% RESULTS (in ../cache/lsp) :
+% 
+% lsp_iter_60000.caffemodel
+% lsp_iter_60000.solverstate
+%
+% fully_conv_net_by_net_surgery.caffemodel
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% train graphical model
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,6 +48,9 @@ tic
 model = train_model(note, pos_val, neg_val, tsize);
 toc
 
+% RESULTS (in ../cache/lsp)
+% CNN_Deep_13_graphical_model.mat
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% testing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,6 +58,9 @@ disp('testing.................................................................')
 tic
 boxes = test_model([note,'_LSP'], model, pos_test);
 toc
+
+% RESULTS (in ../cache/lsp)
+% CNN_Deep_13_LSP_raw_boxes.mat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% evaluation
