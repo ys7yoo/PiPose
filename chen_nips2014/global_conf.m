@@ -7,16 +7,18 @@ conf.interval = 10; % 10 levels from 1 to 1/2
 conf.memsize = 0.5; % 0.5 gb
 conf.NEG_N = 80;
 conf.device_id = 0;
-conf.caffe_root = './external/caffe';
+% conf.caffe_root = './external/caffe';
+conf.caffe_root = [getenv('HOME') '/src/caffe']
 % default configurations
 conf.mining_neg = true;
 conf.mining_pos = false;
 conf.K = 13;
 conf.test_with_detection = false;
 
-% conf.useGpu = 1;
-conf.useGpu = 0;
-conf.batch_size = 1024;
+conf.useGpu = 1;
+% conf.useGpu = 0;
+% conf.batch_size = 1024;
+conf.batch_size = 4096;
 
 conf.at_least_one = true;
 
