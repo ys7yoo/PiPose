@@ -68,10 +68,10 @@ toc
 % get fully-convolutional net
 disp('performing surgery..................................................')
 tic
-
-deploy_file = cnn.cnn_deploy_file;
-fully_conv_model_file = cnn.cnn_conv_model_file;
-deploy_conv_file = cnn.cnn_deploy_conv_file;
+% model_file = cnn.cnn_model_file = '../cache/lsp/lsp_iter_60000.caffemodel'
+deploy_file = cnn.cnn_deploy_file;               % './external/my_models/lsp/lsp_deploy.prototxt'
+fully_conv_model_file = cnn.cnn_conv_model_file; % '../cache/lsp/fully_conv_net_by_net_surgery.caffemodel'
+deploy_conv_file = cnn.cnn_deploy_conv_file;     % './external/my_models/lsp/lsp_deploy_conv.prototxt'
 if ~exist(fully_conv_model_file, 'file')
     net_surgery(model_file, deploy_file, fully_conv_model_file, deploy_conv_file);
     fprintf('fully convolutional model saved as %s\n', fully_conv_model_file);
