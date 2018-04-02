@@ -6,7 +6,7 @@ layers {
   top: "data"
   top: "label"
   data_param {
-    source: "../cache/lsp/LMDB_train"
+    source: "./cache/lsp/LMDB_train"
     backend: LMDB
     batch_size: 512
   }
@@ -25,7 +25,7 @@ layers {
   top: "data"
   top: "label"
   data_param {
-    source: "../cache/lsp/LMDB_val"
+    source: "./cache/lsp/LMDB_val"
     backend: LMDB
     batch_size: 260
   }
@@ -48,10 +48,10 @@ layers {
   blobs_lr: 2.
   weight_decay: 1.
   weight_decay: 0.
-  
+
   convolution_param {
-    num_output: 48 
-    kernel_size: 5 
+    num_output: 48
+    kernel_size: 5
     pad: 2
     stride: 1
     weight_filler {
@@ -107,9 +107,9 @@ layers {
   blobs_lr: 2.
   weight_decay: 1.
   weight_decay: 0.
-  
+
   convolution_param {
-    num_output: 128 
+    num_output: 128
     kernel_size: 3
     stride: 1
     pad: 1
@@ -166,7 +166,7 @@ layers {
   blobs_lr: 2.
   weight_decay: 1.
   weight_decay: 0.
-  
+
   convolution_param {
     num_output: 128
     kernel_size: 3
@@ -196,14 +196,14 @@ layers {
   type: CONVOLUTION
   bottom: "conv3"
   top: "conv4"
-  
+
   blobs_lr: 1.
   blobs_lr: 2.
   weight_decay: 1.
   weight_decay: 0.
 
   convolution_param {
-    num_output: 128 
+    num_output: 128
     kernel_size: 3
     stride: 1
     pad: 1
@@ -236,8 +236,8 @@ layers {
   weight_decay: 1.
   weight_decay: 0.
 
-  convolution_param {   
-    num_output: 128 
+  convolution_param {
+    num_output: 128
     kernel_size: 3
     stride: 1
     pad: 1
@@ -348,7 +348,7 @@ layers {
   weight_decay: 1.
   weight_decay: 0.
 
-  inner_product_param { 
+  inner_product_param {
     num_output: 9699
 #    num_output: 6227
     weight_filler {
@@ -379,6 +379,3 @@ layers {
   bottom: "label"
   top: "loss"
 }
-
-
-
