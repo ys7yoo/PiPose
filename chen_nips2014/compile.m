@@ -13,5 +13,15 @@ eval([mexcmd ' external/qpsolver/qp_one_sparse.cc']);
 eval([mexcmd ' external/qpsolver/score.cc']);
 eval([mexcmd ' external/qpsolver/lincomb.cc']);
 
-eval([mexcmd [' -I', fullfile(caffe_root, 'build/src/'), ' -lprotobuf -llmdb ', ...
-  fullfile(caffe_root, '/build/lib/libcaffe.a'), ' src/mex/store_patch.cpp']]);
+
+libcaffename = fullfile(caffe_root, '/build/lib/libcaffe.a');
+if exist(libcaffename, 'file')
+    eval([mexcmd [' -I', fullfile(caffe_root, 'build/src/'), ' -lprotobuf -llmdb ', ...
+         fullfile(caffe_root, '/build/lib/libcaffe.a'), ' src/mex/store_patch.cpp']]);
+end
+
+libcaffename = fullfile(caffe_root, '/build/lib/libcaffe-nv.a');
+if exist(libcaffename, 'file')
+    eval([mexcmd [' -I', fullfile(caffe_root, 'build/src/'), ' -lprotobuf -llmdb ', ...
+         fullfile(caffe_root, '/build/lib/libcaffe-nv.a'), ' src/mex/store_patch.cpp']]);
+end
