@@ -22,6 +22,8 @@ conf.batch_size = 4096;
 
 conf.at_least_one = true;
 
+conf.visualization = false;
+
 %% override some configurations
 global GLOBAL_OVERRIDER;
 
