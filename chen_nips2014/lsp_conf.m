@@ -20,9 +20,9 @@ conf.degree = [-180+d_step:d_step:-d_step,d_step:d_step:180];
 
 % ---------------- CNN files ------------------
 conf.cnn.cnn_deploy_conv_file = './external/my_models/lsp/lsp_deploy_conv.prototxt';
-conf.cnn.cnn_conv_model_file = '../cache/lsp/fully_conv_net_by_net_surgery.caffemodel';
+conf.cnn.cnn_conv_model_file = './cache/lsp/fully_conv_net_by_net_surgery.caffemodel';
 conf.cnn.cnn_deploy_file = './external/my_models/lsp/lsp_deploy.prototxt';
-conf.cnn.cnn_model_file = '../cache/lsp/lsp_iter_60000.caffemodel';
+conf.cnn.cnn_model_file = './cache/lsp/lsp_iter_60000.caffemodel';
 
 % ----- evaluation functions -----
 % --- part sticks ---
