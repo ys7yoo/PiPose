@@ -2,13 +2,26 @@ function net_surgery(model_file, deploy_file, fully_conv_model_file, deploy_conv
 % ------------------------------------------------------------------------
 % net_surgery_demo
 % ------------------------------------------------------------------------
+
+%deploy_file = './external/my_models/lsp/lsp_deploy.prototxt'
+%model_file = '../cache/lsp/lsp_iter_60000.caffemodel'
+if ~exist(deploy_file, 'file')
+  error('cannot find %s (deploy_file)\n', deploy_file);
+end
 if ~exist(model_file, 'file')
   error('%s model has not been trained\n', model_file);
 end
 
+disp('loading deploy model') 
 %% get weights in the net with fully-connected layers
-caffe('reset');
-caffe('init', deploy_file, model_file);
+% net = caffe.Net(deploy_file, model_file, 'test')
+net = caffe.Net(deploy_file, 'test')
+disp('loading trained weights')
+net.copy_from(model_file); % load weights
+disp trained('loaded')
+disp(net.layer_names)
+
+
 fc_weights = caffe('get_weights');
 % print blob dimensions
 fc_names = {'fc6', 'fc7', 'fc8'};

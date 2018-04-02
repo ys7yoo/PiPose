@@ -12,6 +12,12 @@ note = [conf.note];
  
 diary([cachedir note '_log_' datestr(now,'mm-dd-yy') '.txt']);
 
+
+matcaffe = [conf.caffe_root '/matlab/']
+addpath(matcaffe)
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% read data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
