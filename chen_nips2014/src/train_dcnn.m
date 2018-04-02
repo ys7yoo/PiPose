@@ -68,6 +68,8 @@ toc
 % get fully-convolutional net
 disp('performing surgery..................................................')
 tic
+
+
 % model_file = cnn.cnn_model_file = '../cache/lsp/lsp_iter_60000.caffemodel'
 deploy_file = cnn.cnn_deploy_file               % './external/my_models/lsp/lsp_deploy.prototxt'
 fully_conv_model_file = cnn.cnn_conv_model_file % '../cache/lsp/fully_conv_net_by_net_surgery.caffemodel'
