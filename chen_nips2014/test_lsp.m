@@ -70,7 +70,8 @@ model = parload([cachedir cls], 'model')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 disp('testing.................................................................')
 tic
-boxes = test_model([note,'_LSP'], model, pos_test);
+conf.visualization = true;
+boxes = test_model([note,'_LSP'], model, pos_test, conf);
 toc
 
 % RESULTS (in ../cache/lsp)
