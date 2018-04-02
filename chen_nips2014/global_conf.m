@@ -30,8 +30,8 @@ if ~isempty(GLOBAL_OVERRIDER)
     conf = GLOBAL_OVERRIDER(conf);
     % ======= fields constructed from existing configurations =======
     conf.note = ['CNN_Deep_', num2str(conf.K)];
-    %conf.cachedir = ['./cache/', conf.dataset, '/'];
-    conf.cachedir = ['../cache/', conf.dataset, '/'];  % changed on 2017. 4. 22
+    conf.cachedir = ['./cache/', conf.dataset, '/'];
+    %conf.cachedir = ['../cache/', conf.dataset, '/'];  % changed on 2017. 4. 22
     if ~exist(conf.cachedir, 'dir')
         mkdir(conf.cachedir);
     end
