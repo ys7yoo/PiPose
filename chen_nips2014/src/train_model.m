@@ -1,6 +1,9 @@
-function model = train_model(note, pos_val, neg_val, tsize)
+function model = train_model(note, pos_val, neg_val, tsize, conf)
 
-conf = global_conf();
+if nargin < 5
+    conf = global_conf();
+end
+
 cachedir = conf.cachedir;
 pa = conf.pa;
 cls = [note '_graphical_model'];

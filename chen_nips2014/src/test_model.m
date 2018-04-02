@@ -1,8 +1,10 @@
-function boxes = test_model(note,model,test)
+function boxes = test_model(note,model,test,conf)
 % boxes = testmodel(name,model,test,suffix)
 % Returns candidate bounding boxes after non-maximum suppression
 
-conf = global_conf();
+if nargin < 4
+    conf = global_conf();
+end
 
 cachedir = conf.cachedir;
 par.impyra_fun = conf.impyra_fun;
@@ -33,7 +35,7 @@ for i = 1:length(test)
         boxes{i} = boxes{i}(1,:);
     end
     % visualization
-    if 0
+    if conf.visualization
         im = imreadx(test(i));
         if ~isempty(boxes{i})
             showskeletons(im, boxes{i}(1,:), conf.pa);
